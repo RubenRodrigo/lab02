@@ -1,8 +1,18 @@
-export const Total = (props) => {
-  const {part1, part2, part3} = props
-  const total = part1.exercises + part2.exercises + part3.exercises
+export const Total = ({parts}) => {
+  // Usamos esta funcion para devolver el atributo exercises del objeto en la iteracion.
+  const amount = (item) => {
+    return item.exercises
+  }
+
+  // Usamos esta función para devolver los valores prev y next sumados
+  const sum = (prev, next) => {
+    return prev + next
+  }
+  
+  const total = parts.map(amount).reduce(sum)
   return(
     <>
+    {parts.map}
       <p>Number of exercises {total} </p>
     </>
   )
