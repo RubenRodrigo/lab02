@@ -8,11 +8,10 @@ export const Total = ({parts}) => {
   const sum = (prev, next) => {
     return prev + next
   }
-  
+
   const total = parts.map(amount).reduce(sum)
   return(
     <>
-    {parts.map}
       <p>Number of exercises {total} </p>
     </>
   )
